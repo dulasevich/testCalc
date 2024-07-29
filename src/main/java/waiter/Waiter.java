@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Waiter {
-
     private WebDriver driver;
 
     public Waiter(WebDriver driver) {

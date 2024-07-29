@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 import static constants.TestConstants.COS_EXPRESSION;
 
-public class CalcPage extends BasePage{
+public class CalcPage extends BasePage {
     private static final By COOKIES_ALERT = By.cssSelector(".fc-choice-dialog-header button");
     private static final By CALC_INPUT_FIELD = By.cssSelector("#input");
     private static final By CALCULATE_BUTTON = By.cssSelector("#BtnCalc");

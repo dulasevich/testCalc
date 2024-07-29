@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
 
     public static WebDriver setBrowser(String browser) {
-        switch (browser){
+        switch (browser) {
             case "Edge":
                 WebDriverManager.edgedriver().setup();
                 return new EdgeDriver();
