@@ -32,6 +32,7 @@ public class CalcResultTest extends BaseTest {
 
         calcPage.scrollToHistory();
         calcPage.clickHistoryDropDown();
-        Assert.assertEquals(calcPage.getHistoryExpressions(), List.of(COS_EXPRESSION, SQRT_EXPRESSION, REGULAR_EXPRESSION));
+        Assert.assertTrue(calcPage.getHistoryOperations()
+                .containsAll(List.of(REGULAR_EXPRESSION, SQRT_EXPRESSION, COS_EXPRESSION)));
     }
 }

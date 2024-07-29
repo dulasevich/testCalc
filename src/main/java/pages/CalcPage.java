@@ -51,7 +51,7 @@ public class CalcPage extends BasePage {
         driver.findElement(CANCEL).click();
     }
 
-    public List<String> getHistoryExpressions() {
+    public List<String> getHistoryOperations() {
         return driver.findElements(HISTORY_ELEMENTS).stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
