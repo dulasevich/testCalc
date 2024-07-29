@@ -17,7 +17,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get(URL);
         calcPage = new CalcPage();
-        calcPage.closeCookieAlert();
+        calcPage.closeCookiesAlert();
     }
 
     @AfterMethod
