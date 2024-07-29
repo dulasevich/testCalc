@@ -6,14 +6,14 @@ public class Driver {
     protected static WebDriver driver;
 
     public static WebDriver getDriver() {
-        if(driver == null) {
+        if (driver == null) {
             driver = DriverFactory.setBrowser("Edge");
         }
         return driver;
     }
 
     public static void tearDown() {
-        if(driver != null) {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
