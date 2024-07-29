@@ -32,7 +32,7 @@ public class CalcPage extends BasePage {
 
     public void calculateResults(String inputValue) {
         driver.findElement(CALCULATE_BUTTON).click();
-        waiter.waitUntilAttributeValueIsNot(driver.findElement(CALC_INPUT_FIELD), inputValue);
+        waiter.waitUntilAttributeValueIsNot(CALC_INPUT_FIELD, inputValue);
     }
 
     public String getCalculationResult() {

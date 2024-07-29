@@ -1,5 +1,6 @@
 package waiter;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -14,12 +15,18 @@ public class Waiter {
         this.driver = driver;
     }
 
-    public void waitUntilAttributeValueIsNot(WebElement element, String inputValue) {
-        new WebDriverWait(driver, Duration.ofMillis(1000))
-                .until(attributeValueIsNot(element, inputValue));
+    public void waitUntilAttributeValueIsNot(By by, String inputValue) {
+        new WebDriverWait(driver, Duration.ofMillis(2000))
+                .until(attributeValueIsNot(by, inputValue));
     }
 
-    private static ExpectedCondition<Boolean> attributeValueIsNot(WebElement element, String value) {
-        return input -> !element.getAttribute("value").equals(value);
+    private static ExpectedCondition<Boolean> attributeValueIsNot(By by, String value) {
+        return new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                WebElement element = driver.findElement(by);
+                return !element.getAttribute("value").equals(value);
+            }
+        };
     }
 }
