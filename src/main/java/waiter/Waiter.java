@@ -15,17 +15,17 @@ public class Waiter {
         this.driver = driver;
     }
 
-    public void waitUntilAttributeValueIsNot(By by, String inputValue) {
+    public void waitUntilAttributeValueIsNot(By selector, String inputValue) {
         new WebDriverWait(driver, Duration.ofMillis(2000))
-                .until(attributeValueIsNot(by, inputValue));
+                .until(attributeValueIsNot(selector, inputValue));
     }
 
-    private static ExpectedCondition<Boolean> attributeValueIsNot(By by, String value) {
+    private static ExpectedCondition<Boolean> attributeValueIsNot(By selector, String inputValue) {
         return new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
-                WebElement element = driver.findElement(by);
-                return !element.getAttribute("value").equals(value);
+                WebElement element = driver.findElement(selector);
+                return !element.getAttribute("value").equals(inputValue);
             }
         };
     }
