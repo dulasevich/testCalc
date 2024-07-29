@@ -10,20 +10,20 @@ import java.util.stream.Collectors;
 import static constants.TestConstants.COS_EXPRESSION;
 
 public class CalcPage extends BasePage {
-    private static final By COOKIES_ALERT = By.cssSelector(".fc-choice-dialog-header button");
+    private static final By CLOSE_COOKIES_ALERT_BUTTON = By.cssSelector(".fc-choice-dialog-header button");
     private static final By CALC_INPUT_FIELD = By.cssSelector("#input");
     private static final By CALCULATE_BUTTON = By.cssSelector("#BtnCalc");
     private static final By RAD_CHECKBOX = By.id("trigorad");
-    private static final By HISTORY = By.cssSelector(".history");
-    private static final By CANCEL = By.cssSelector("#BtnClear");
+    private static final By HISTORY_DROPDOWN = By.cssSelector(".history");
+    private static final By CANCEL_BUTTON = By.cssSelector("#BtnClear");
     private static final By HISTORY_ELEMENTS = By.cssSelector("p[data-inp]");
 
     public CalcPage() {
         super();
     }
 
-    public void closeCookieAlert() {
-        driver.findElement(COOKIES_ALERT).click();
+    public void closeCookiesAlert() {
+        driver.findElement(CLOSE_COOKIES_ALERT_BUTTON).click();
     }
 
     public void enterCalcExpression(String inputData) {
@@ -44,11 +44,11 @@ public class CalcPage extends BasePage {
     }
 
     public void clickHistoryDropDown() {
-        driver.findElement(HISTORY).click();
+        driver.findElement(HISTORY_DROPDOWN).click();
     }
 
     public void clickCancelButton() {
-        driver.findElement(CANCEL).click();
+        driver.findElement(CANCEL_BUTTON).click();
     }
 
     public List<String> getHistoryOperations() {
@@ -65,6 +65,6 @@ public class CalcPage extends BasePage {
 
     public void scrollToHistory() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(HISTORY));
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(HISTORY_DROPDOWN));
     }
 }
