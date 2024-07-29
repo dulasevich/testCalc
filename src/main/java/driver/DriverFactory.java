@@ -8,12 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    public static WebDriver setBrowser(String browser) {
+    public static WebDriver getDriver(String browser) {
         switch (browser) {
-            case "Edge":
+            case "edge":
                 WebDriverManager.edgedriver().setup();
                 return new EdgeDriver();
-            case "Firefox":
+            case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
             default:
